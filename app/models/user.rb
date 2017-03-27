@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :groups
   has_many :posts
+
+  has_many :group_relatonships
+  has_many :participated_groups, :through => :group_relatonships, :source => :group
 end
